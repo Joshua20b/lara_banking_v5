@@ -1,4 +1,4 @@
-<aside class="main-sidebar" style="background: #005C45 !important;">
+<aside class="main-sidebar new_sidebar_bg">
     <!-- sidebar-->
     <section class="sidebar position-relative">
         <div class="multinav">

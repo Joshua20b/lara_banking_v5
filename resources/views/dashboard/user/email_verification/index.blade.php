@@ -1,6 +1,6 @@
 @extends('dashboard.user.layouts.master')
 @section('content')
-    <div class="content-wrapper">
+    <div class="content-wrapper new_dashboard_bg">
         <div class="container-full">
             <section class="content">
                 <!-- Basic Card Example -->

@@ -1,4 +1,4 @@
-<header class="main-header">
+<header class="main-header new_header_bg">
     <div class="d-flex align-items-center logo-box justify-content-start">
         <!-- Logo -->
         <a href="/" class="logo">

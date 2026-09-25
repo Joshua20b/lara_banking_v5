@@ -69,7 +69,7 @@
             border-bottom: 20px solid rgba(255, 255, 255, 0.2);
         }
     </style>
-    <div class="content-wrapper">
+    <div class="content-wrapper new_dashboard_bg">
         <div class="container-full">
             <!-- Content Header (Page header) -->
             <div class="content-header d-none d-md-block d-lg-block">

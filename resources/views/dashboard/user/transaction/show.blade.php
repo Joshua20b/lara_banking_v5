@@ -1,6 +1,6 @@
 @extends('dashboard.user.layouts.master')
 @section('content')
-    <div class="content-wrapper" style="min-height: 697px;">
+    <div class="content-wrapper new_dashboard_bg" style="min-height: 697px;">
         <div class="container-full">
             <!-- Content Header (Page header) -->
             <div class="content-header d-none d-md-block d-lg-block">

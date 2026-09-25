@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+        }
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .card-custom {
+            border-radius: 10px;
+            padding: 20px;
+            color: white;
+            width: 100%;
+            position: relative;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .card-custom h5 {
+            margin: 0;
+            font-size: 20px;
+        }
+        .card-custom p {
+            margin: 10px 0 0;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .bg-balance {
+            background-color: #0e3a61;
+        }
+        .bg-holder {
+            background-color: #131418;
+        }
+        .bg-type {
+            background-color: #2a8c7f;
+        }
+        .bg-number {
+            background-color: #2a8c7f;
+        }
+        .bg-state {
+            background-color: #131418;
+        }
+        .bg-profile {
+            background-color: #0e3a61;
+        }
+        .card-custom::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 100px;
+            height: 100px;
+            background: transparent;
+            border-radius: 50%;
+            border-top: 20px solid rgba(255, 255, 255, 0.2);
+            border-right: 20px solid rgba(255, 255, 255, 0.2);
+        }
+        .bg-holder::before {
+            border-top: 20px solid rgba(255, 255, 255, 0.2);
+            border-left: 20px solid rgba(255, 255, 255, 0.2);
+        }
+        .bg-type::before {
+            border-top: 20px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 20px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row dashboard">
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card card-custom bg-balance">
+                    <div class="card-body">
+                        <h5 class="card-title">Account Balance</h5>
+                        <p class="card-text">
+                            {{ currency($user->currency) }}{{ formatAmount($user->balance) }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card card-custom bg-holder">
+                    <div class="card-body">
+                        <h5 class="card-title">Income Balance</h5>
+                        <p class="card-text text-capitalize">
+                            {{ currency($user->currency) }}{{ formatAmount($user->income_balance) }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card card-custom bg-type">
+                    <div class="card-body">
+                        <h5 class="card-title">Loan Balance</h5>
+                        <p class="card-text text-capitalize">
+                            {{ currency($user->currency) }}{{ formatAmount($user->loan_balance) }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card card-custom bg-number">
+                    <div class="card-body">
+                        <h5 class="card-title">Account Number</h5>
+                        <p class="card-text">{{ $user->account_number }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card card-custom bg-state">
+                    <div class="card-body">
+                        <h5 class="card-title">Account State</h5>
+                        <p class="card-text">
+                            @foreach ($accountStates as $accountState)
+                                @if ($user->account_state == $accountState->value)
+                                    {{ $accountState->name }}
+                                @endif
+                            @endforeach
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card card-custom bg-profile">
+                    <div class="card-body">
+                        <h5 class="card-title">Account Type</h5>
+                        <p class="card-text text-capitalize">
+                            {{ $user->account_type }} Account
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

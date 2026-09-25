@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .dashboard {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .card {
+            border-radius: 10px;
+            padding: 20px;
+            color: white;
+            width: 300px;
+            position: relative;
+        }
+        .card h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+        .card p {
+            margin: 10px 0 0;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .balance {
+            background-color: #0e3a61;
+        }
+        .income {
+            background-color: #131418;
+        }
+        .expense {
+            background-color: #2a8c7f;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 100px;
+            height: 100px;
+            background: transparent;
+            border-radius: 50%;
+            border-top: 20px solid rgba(255, 255, 255, 0.2);
+            border-right: 20px solid rgba(255, 255, 255, 0.2);
+        }
+        .income::before {
+            border-top: 20px solid rgba(255, 255, 255, 0.2);
+            border-left: 20px solid rgba(255, 255, 255, 0.2);
+        }
+        .expense::before {
+            border-top: 20px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 20px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="card balance">
+            <h2>Account Balance</h2>
+            <p>$503,750.00</p>
+        </div>
+        <div class="card income">
+            <h2>Income</h2>
+            <p>$500,000.00</p>
+        </div>
+        <div class="card expense">
+            <h2>Expense</h2>
+            <p>$0.00</p>
+        </div>
+    </div>
+</body>
+</html>
